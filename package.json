@@ -1,13 +1,29 @@
 {
   "name": "components-library-expocenter",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/library.js",
+  "module": "./dist/library.mjs",
+  "files": [
+    "dist/*",
+    "./src/components/GsInput.vue",
+    "./src/components/GsButton.vue"
+  ],
+  "browser": {
+    "./sfc": "src/components-library-expocenter.vue"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "rollup -c",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@rollup/plugin-typescript": "^11.1.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "vue": "^3.2.13"
+  },
+  "peerDependencies": {
     "vue": "^3.2.13"
   },
   "devDependencies": {
@@ -22,6 +38,21 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
     "prettier": "^2.4.1",
+    "rollup": "^3.21.7",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-vue": "^6.0.0",
     "typescript": "~4.5.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GINSENG-A7/components-library-expocenter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GINSENG-A7/components-library-expocenter/issues"
+  },
+  "homepage": "https://github.com/GINSENG-A7/components-library-expocenter#readme",
+  "description": ""
 }
