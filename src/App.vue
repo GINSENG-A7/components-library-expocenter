@@ -1,16 +1,28 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="container">
+    <GsInput
+      v-model:inputValue="inputValue"
+      :input-placeholder="'Type some text here'"
+    />
+    <GsButton :button-text="'Click me!'" />
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import { Ref, defineComponent, ref } from "vue";
+import GsInput from "@/components/GsInput.vue";
+import GsButton from "@/components/GsButton.vue";
 
 export default defineComponent({
   name: "App",
   components: {
-    HelloWorld,
+    GsInput,
+    GsButton,
+  },
+  setup() {
+    const inputValue: Ref<string> = ref("Aloha!");
+    return { inputValue };
   },
 });
 </script>
@@ -23,5 +35,14 @@ export default defineComponent({
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 </style>
