@@ -1,5 +1,7 @@
 <template>
-  <button class="button">{{ buttonText }}</button>
+  <button class="button" @click.stop="insertInputValue">
+    {{ buttonText }}
+  </button>
 </template>
 
 <script lang="ts">
@@ -9,6 +11,11 @@ export default defineComponent({
   name: "GsButton",
   props: {
     buttonText: String,
+  },
+  methods: {
+    insertInputValue() {
+      this.$emit("gs-button-click");
+    },
   },
 });
 </script>

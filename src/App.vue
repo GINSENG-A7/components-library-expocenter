@@ -5,7 +5,7 @@
       v-model:inputValue="inputValue"
       :input-placeholder="'Type some text here'"
     />
-    <GsButton :button-text="'Click me!'" />
+    <GsButton :button-text="'Click me!'" @gs-button-click="insertInputValue" />
   </div>
 </template>
 
@@ -23,6 +23,11 @@ export default defineComponent({
   setup() {
     const inputValue: Ref<string> = ref("Aloha!");
     return { inputValue };
+  },
+  methods: {
+    insertInputValue() {
+      this.inputValue = "Button is clicked";
+    },
   },
 });
 </script>
